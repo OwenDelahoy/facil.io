@@ -129,7 +129,7 @@ fio_dict_s *fio_dict_remove(fio_dict_s *node) {
 }
 
 /** Returns a `fio_dict_s *` dictionary (or NULL) of all `prefix` children. */
-inline fio_dict_s *fio_dict_step(fio_dict_s *dict, uint8_t prefix) {
+static inline fio_dict_s *fio_dict_step(fio_dict_s *dict, uint8_t prefix) {
   if (!dict)
     return NULL;
   dict = dict->trie[prefix & 0xf];
